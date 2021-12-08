@@ -7,8 +7,8 @@ import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
 import { useUserContext } from "../context/user_context";
-
 const Sidebar = () => {
+  const data = useProductsContext();
   const isOpen = false;
   return (
     <SidebarContainer>
