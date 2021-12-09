@@ -25,8 +25,6 @@ export const FilterProvider = ({ children }) => {
 
   useEffect(() => {
     if (products.length > 0) {
-      console.log("products", products);
-      console.log(initialState);
       dispatch({ type: LOAD_PRODUCTS, payload: products });
     }
   }, [products])
