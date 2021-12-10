@@ -26,6 +26,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     getSingleProduct(`${url}${id}`);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   useEffect(() => {
@@ -34,6 +35,7 @@ const SingleProductPage = () => {
         history.push("/");
       }, 3000);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [singleProductError]);
 
   if (singleProductLoading) return <Loading />;

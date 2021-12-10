@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { links } from "../utils/constants";
+
 const PageHero = ({ title, product }) => {
   return (
     <Wrapper>
