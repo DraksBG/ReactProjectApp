@@ -32,7 +32,7 @@ function App() {
           </Private>
           <Route exact path="/*" component={ErrorPage} />
         </Switch>
-        <Footer />
+      <Footer /> 
       </Router>
     </AuthWrapper>
   );
