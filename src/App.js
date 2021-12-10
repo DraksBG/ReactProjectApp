@@ -19,16 +19,18 @@ function App() {
     <Router>
       <Navbar />
       <Sidebar />
-     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/cart" component={Cart} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/products" component={Products} />
-      <Route exact path="/products/:id" component={SingleProduct} />
-      <Route exact path="/checkout" component={Checkout} />
-      <Route exact path="/*" component={ErrorPage} />
-     </Switch>
-     <Footer />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/products/:id" component={SingleProduct} />
+        <Private exact path="/checkout">
+          <Checkout />
+        </Private>
+        <Route exact path="/*" component={ErrorPage} />
+      </Switch>
+      <Footer />
     </Router>
   );
 }
