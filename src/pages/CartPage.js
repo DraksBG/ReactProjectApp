@@ -20,7 +20,7 @@ const CartPage = () => {
   }
   return (
     <main>
-      <PageHero title='cart' />
+      <PageHero title=' cart' />
       <Wrapper className='page'>
         <CartContent />
       </Wrapper>
