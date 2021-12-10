@@ -64,7 +64,6 @@ const filter_reducer = (state, action) => {
     return { ...state, filters: { ...state.filters, [name]: value } }
   }
   if (action.type === FILTER_PRODUCTS) {
-    console.log('filtering products')
     return { ...state }
   }
   throw new Error(`No Matching "${action.type}" - action type`)
