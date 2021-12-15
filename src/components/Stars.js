@@ -13,7 +13,9 @@ const Stars = ({ stars, reviews }) => {
   });
   return (
     <Wrapper>
-      <div className="stars"><span>{tempStars}</span></div>
+      <div className="stars">
+        <span>{tempStars}</span>
+      </div>
       <p className="reviews">({reviews} customer reviews)</p>
     </Wrapper>
   );
