@@ -13,6 +13,7 @@ import {
   Checkout,
   Private,
   AuthWrapper,
+  AddProductPage,
 } from "./pages";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Private exact path="/checkout">
             <Checkout />
           </Private>
+          <Route exact path="/add-product" component={AddProductPage} />
           <Route exact path="/*" component={ErrorPage} />
         </Switch>
         <Footer />
