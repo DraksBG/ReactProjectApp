@@ -22,9 +22,13 @@ Admin:
 
     ReactJS
     Client-Side Routing
-    Authentication
+    API's stored in heroku
+    Authentication using Auth0
+    Payment system using stripe
     Error Handling
     React Hooks
     Context API
     Data Validation - Client Side
     Responsive Design
+ 
+ Web app deployed into netlify, for testing purposes => https://mycomfyplace.netlify.app/
