@@ -35,7 +35,7 @@ const Nav = () => {
               <Link to="/checkout">checkout</Link>
             </li>
           )}
-          {curUser.nickname === "draksbg" && (
+          {curUser?.nickname === "draksbg" && (
             <li>
               <Link to="/add-product">add product</Link>
             </li>
