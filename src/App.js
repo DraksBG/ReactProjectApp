@@ -31,7 +31,9 @@ function App() {
           <Private exact path="/checkout">
             <Checkout />
           </Private>
-          <Route exact path="/add-product" component={AddProductPage} />
+          <Private exact path="/add-product">
+            <AddProductPage />
+          </Private>
           <Route exact path="/*" component={ErrorPage} />
         </Switch>
         <Footer />

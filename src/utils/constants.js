@@ -51,10 +51,15 @@ export const InitialState = {
   productDescription: "",
 };
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
 export const singleProdcutPost = (product, id) => {
   return {
     id,
-    stock: 5,
+    stock: getRandomArbitrary(1, 5),
     price: product.productPrice,
     shipping: true,
     colors: ["#ff0000", "#00ff00", "#0000ff"],
@@ -139,7 +144,7 @@ export const singleProdcutPost = (product, id) => {
         },
       },
     ],
-    reviews: 25,
+    reviews: getRandomArbitrary(25, 1000),
     stars: 4.9,
     name: product.productName,
     description: product.productDescription,
