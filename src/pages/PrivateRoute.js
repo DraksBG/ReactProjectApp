@@ -6,7 +6,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   const { user } = useAuth0();
   return (
     <>
-      {user.nickname === "draksbg" &&
+      {user?.nickname === "draksbg" &&
       rest.computedMatch.url === "/add-product" ? (
         <Route
           {...rest}
