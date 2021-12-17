@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 import { useProductsContext } from "../context/products_context";
-import { single_product_url as url } from "../utils/constants";
+import { single_product_url as url, products_url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
 import {
   Loading,
@@ -15,6 +17,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const SingleProductPage = () => {
+  const { user } = useAuth0();
   const { id } = useParams();
   const history = useHistory();
   const {
@@ -22,6 +25,7 @@ const SingleProductPage = () => {
     singleProductError,
     getSingleProduct,
     singleProduct,
+    getProducts,
   } = useProductsContext();
 
   useEffect(() => {
@@ -37,6 +41,19 @@ const SingleProductPage = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [singleProductError]);
+  const handleDelete = (itemId) => {
+    if (itemId) {
+      axios.delete(`${products_url}/${itemId}`).then((response) => {
+        if (response) {
+          setTimeout(() => {
+            getProducts(products_url);
+            history.push("/");
+          }, 1500);
+          console.log(response);
+        }
+      });
+    }
+  };
 
   if (singleProductLoading) return <Loading />;
   if (singleProductError) return <Error />;
@@ -79,6 +96,11 @@ const SingleProductPage = () => {
             </p>
             <hr />
             {stock > 0 && <AddToCart product={singleProduct} />}
+            {user?.nickname === "draksbg" && (
+              <button className="btn" onClick={() => handleDelete(sku)}>
+                Delete product
+              </button>
+            )}
           </section>
         </div>
       </div>
