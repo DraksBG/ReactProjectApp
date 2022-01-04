@@ -65,7 +65,13 @@ export const ProductsProvider = ({ children }) => {
 
   return (
     <ProductsContext.Provider
-      value={{ ...state, openSidebar, closeSidebar, getSingleProduct, getProducts }}
+      value={{
+        ...state,
+        openSidebar,
+        closeSidebar,
+        getSingleProduct,
+        getProducts,
+      }}
     >
       {children}
     </ProductsContext.Provider>

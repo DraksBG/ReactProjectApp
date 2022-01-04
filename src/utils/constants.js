@@ -51,10 +51,65 @@ export const InitialState = {
   productDescription: "",
 };
 
+export const inputData = [
+  {
+    lableName: "Product Name",
+    name: "productName",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter name of the product",
+    variant: "outlined",
+  },
+  {
+    lableName: "Product Price",
+    name: "productPrice",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter price of the product",
+    variant: "outlined",
+  },
+  {
+    lableName: "Product Company",
+    name: "productCompany",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter company of the product",
+    variant: "outlined",
+  },
+  {
+    lableName: "Product Category",
+    name: "productCategory",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter category of the product",
+    variant: "outlined",
+  },
+];
+
+export const imagesInputData = [
+  {
+    name: "productImages1",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter Link for image of the product",
+  },
+  {
+    name: "productImages2",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter Link for image of the product",
+  },
+  {
+    name: "productImages3",
+    className: "text-fields",
+    type: "text",
+    placeholder: "Enter Link for image of the product",
+  },
+];
+
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
-
 
 export const singleProdcutPost = (product, id) => {
   return {
@@ -95,8 +150,8 @@ export const singleProdcutPost = (product, id) => {
         id: Math.random().toString(36).substr(2, 9),
         width: 1000,
         height: 667,
-        url: product.images2,
-        filename: "extra-1.jpeg",
+        url: product.productImages2,
+        filename: "extra-2.jpeg",
         size: 102108,
         type: "image/jpeg",
         thumbnails: {
@@ -121,8 +176,8 @@ export const singleProdcutPost = (product, id) => {
         id: Math.random().toString(36).substr(2, 9),
         width: 1000,
         height: 714,
-        url: product.images3,
-        filename: "extra-2.jpeg",
+        url: product.productImages3,
+        filename: "extra-3.jpeg",
         size: 84418,
         type: "image/jpeg",
         thumbnails: {

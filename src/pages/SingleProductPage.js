@@ -68,6 +68,7 @@ const SingleProductPage = () => {
     company,
     images,
   } = singleProduct;
+
   return (
     <Wrapper>
       <PageHero title={name} product={singleProduct} />
